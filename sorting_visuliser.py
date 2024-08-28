@@ -45,12 +45,50 @@ def selection_sort():
     plt.xlabel(f"{lst}")    
     plt.bar(x, lst, color='green')  # Final sorted list in green
     plt.show()
+
+
+def insertion_sort():
+    for i in range(1,  n):
+        value = lst[i]
+        j = i
+        
+        while j > 0 and lst[j-1] > value:
+            lst[j] = lst[j-1]
+            j = j - 1
+            plt.xlabel(f"{lst}")
+        lst[j] = value
+        plt.title("Insertion Sort")
+        plt.bar(x, lst, color='blue')
+        plt.pause(0.05)
+        plt.clf()
+
+    plt.title("Insertion Sort")
+    plt.xlabel(f"{lst}")    
+    plt.bar(x, lst, color='green')  # Final sorted list in green
+    plt.show()   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
-a = int(input("What sorting would you opt for \n 1. Bubble Sort \n 2. Selection Sort : \n"))
+a = int(input("What sorting would you opt for \n 1. Bubble Sort \n 2. Selection Sort \n 3. Insertion Sort : \n"))
 
 if a == 1:
     bubble_sort()
 elif a == 2:
     selection_sort()
+elif a == 3:
+    insertion_sort()
 else:
     print('Enter correct option in numeric form.')
